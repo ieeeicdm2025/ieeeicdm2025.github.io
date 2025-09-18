@@ -1722,7 +1722,7 @@
 
 
                                             <div
-                                                class="et_pb_module et_pb_slider et_pb_slider_0 et_pb_slider_fullwidth_off">
+                                                class="et_pb_module et_pb_slider et_pb_slider_0 et_pb_slider_fullwidth_off" style="height: 300px !important; overflow: hidden !important;">
                                                 <div class="et_pb_slides">
                                                     <div class="et_pb_slide et_pb_slide_0 et_pb_bg_layout_dark et_pb_media_alignment_center et-pb-active-slide"
                                                         data-slide-id="et_pb_slide_0">
@@ -1731,7 +1731,7 @@
                                                         <div class="et_pb_container clearfix">
                                                             <div class="et_pb_slider_container_inner">
 
-                                                                <div class="et_pb_slide_description">
+                                                                <div class="et_pb_slide_description" style="transform: translateY(-110px) !important;">
                                                                     <h2 class="et_pb_slide_title">IEEE ICDM 2025</h2>
                                                                     <div class="et_pb_slide_content">
                                                                         <h1 style="text-align: center;">The world’s
@@ -2158,6 +2158,28 @@
         jQuery(document).ready((function (e) { e("#et_top_search, .et_close_search_field, .et_pb_main_blurb_image").attr("aria-hidden", "true") }));
         /* ]]> */
     </script>
+
+    <script>
+    jQuery(document).ready(function($) {
+        // 定义一个函数来修复响应式样式
+        function fixResponsiveStyles() {
+            // 如果屏幕宽度小于 981px (移动端和平板端)
+            if ($(window).width() < 981) {
+                // 移除轮播图容器的内联样式
+                $('.et_pb_slider_0.et_pb_slider').removeAttr('style');
+                // 移除文字描述容器的内联样式
+                $('.et_pb_slide_description').removeAttr('style');
+            }
+        }
+
+        // 页面加载完成后立即执行一次
+        fixResponsiveStyles();
+
+        // 当窗口大小改变时也执行一次，确保响应式
+        $(window).on('resize', fixResponsiveStyles);
+    });
+</script>
+
     <script type="text/javascript"
         src="wp-content/themes/divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids2478.js?ver=4.27.1"
         id="fitvids-js"></script>
@@ -2190,7 +2212,7 @@
         .et_pb_slider_0.et_pb_slider {
             overflow-x: hidden;
             overflow-y: hidden;
-            height: 300px !important;
+            
         }
 
         .et_pb_slider_0>.box-shadow-overlay,
@@ -2234,59 +2256,78 @@
 
     
         @media only screen and (min-width: 981px) {
+        .et_pb_slider_0.et_pb_slider {
+            height: 300px !important; /* PC端高度 */
+        }
+        .et_pb_slider_0 .et_pb_slide_description {
+            transform: translateY(-110px) !important; /* PC端文字上移 */
+        }
+        /* 确保PC端图片显示上半部分 */
+        .et_pb_slider .et_pb_slide_0 {
+            background-position: top center !important;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 980px) {
     .et_pb_slider_0.et_pb_slider {
-        height: 300px !important;
+        height: 230px !important;
     }
     .et_pb_slider_0 .et_pb_slide_description {
-        transform: translateY(-110px) !important;
+        transform: translateY(-50px) !important;
     }
-}
-
-
-@media only screen and (min-width: 768px) and (max-width: 980px) {
-    .et_pb_slider_0.et_pb_slider {
-        height: 300px !important;
-    }
-    .et_pb_slider_0 .et_pb_slide_description {
-        transform: translateY(-60px) !important;
-    }
-}
-
-
-@media only screen and (max-width: 767px) {
-
-    .et_pb_slider_0.et_pb_slider {
-        height: 100px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-    }
-
-
-    .et_pb_slider_0.et_pb_slider .et_pb_slides,
-    .et_pb_slider_0.et_pb_slider .et_pb_slide {
-        height: 250px !important;
-        min-height: 250px !important;
-        max-height: 250px !important;
-    }
-
-
+    /* 确保图片显示上半部分 */
     .et_pb_slider .et_pb_slide_0 {
-        background-size: cover !important;
         background-position: top center !important;
-        background-repeat: no-repeat !important;
     }
 
-
-    .et_pb_slider_0 .et_pb_slide_description {
-        transform: translateY(0px) !important;
-        padding: 0 15px;
+    
+    
+    .et_pb_slide_title {
+        font-size: 30px !important; 
     }
-
-    .et_pb_slide_description .et_pb_slide_title,
+   
     .et_pb_slide_content h1 {
-        font-size: 22px !important;
+        font-size: 24px !important; /* 原始大小可能为 33px 或更大 */
     }
 }
+
+
+     /* 移动端 (屏幕宽度 767px 及以下) */
+    @media only screen and (max-width: 767px) {
+        /* 修复：移除冲突的 'height: 100px'，统一使用 250px */
+        .et_pb_slider_0.et_pb_slider {
+            height: 200px !important; /* 统一高度 */
+            min-height: 200px !important;
+            max-height: 200px !important;
+        }
+
+        /* 强制重置轮播图内部元素高度 */
+        .et_pb_slider_0.et_pb_slider .et_pb_slides,
+        .et_pb_slider_0.et_pb_slider .et_pb_slide {
+            height: 200px !important;
+            min-height: 200px !important;
+            max-height: 200px !important;
+        }
+
+        /* 确保背景图片正确显示上半部分 */
+        .et_pb_slider .et_pb_slide_0 {
+            background-size: cover !important;
+            background-position: top center !important; /* 关键：显示图片上半部分 */
+            background-repeat: no-repeat !important;
+        }
+
+        /* 调整文字位置，由于容器变矮，上移距离应减小或为0 */
+        .et_pb_slider_0 .et_pb_slide_description {
+            transform: translateY(-0px) !important; /* 根据效果调整，例如 -20px */
+            padding: 0 15px; /* 优化边距 */
+        }
+
+        /* 可选：缩小字体 */
+        .et_pb_slide_description .et_pb_slide_title,
+        .et_pb_slide_content h1 {
+            font-size: 20px !important;
+        }
+    }
 
 
     </style>

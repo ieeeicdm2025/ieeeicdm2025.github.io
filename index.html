@@ -1749,7 +1749,9 @@
 
 
                                                     </div>
-                                                    <div class="et_pb_slide et_pb_slide_1 et_pb_bg_layout_dark et_pb_media_alignment_center"
+
+
+                                                    <!-- <div class="et_pb_slide et_pb_slide_1 et_pb_bg_layout_dark et_pb_media_alignment_center"
                                                         data-slide-id="et_pb_slide_1">
 
 
@@ -1773,8 +1775,10 @@
 
 
 
-                                                    </div>
-                                                    <div class="et_pb_slide et_pb_slide_2 et_pb_bg_layout_dark et_pb_media_alignment_center"
+                                                    </div> -->
+
+
+                                                    <!-- <div class="et_pb_slide et_pb_slide_2 et_pb_bg_layout_dark et_pb_media_alignment_center"
                                                         data-slide-id="et_pb_slide_2">
 
 
@@ -1798,7 +1802,7 @@
 
 
 
-                                                    </div>
+                                                    </div> -->
 
                                                 </div>
 
@@ -1855,18 +1859,18 @@
 
                                     <div class="et_pb_row et_pb_row_1">
 
-                                        <!-- 左侧侧栏：占 1/4 宽度 -->
+                                        
                                         <div class="et_pb_column et_pb_column_1_4 et_pb_column_sidebar et_pb_css_mix_blend_mode_passthrough"
                                             style="border: 2px solid #e0e0e0; border-radius: 8px; padding: 0; background-color: #ffffff; overflow: hidden;">
 
-                                            <!-- 顶部子框：仅包含标题，灰色背景 -->
+                                            
                                             <div
                                                 style="background-color: #f0f0f0; padding: 16px 20px; border-bottom: 1px solid #e0e0e0;">
                                                 <h3 style="margin: 0; padding-left: 0; font-size: 18px; color: #333;">
                                                     Key Dates</h3>
                                             </div>
 
-                                            <!-- 底部子框：包含所有列表和注释，白色背景 -->
+                                            
                                             <div style="background-color: #ffffff; padding: 20px 20px 20px 20px;">
                                                 <ul
                                                     style="line-height: 2.0; font-size: 16px; margin: 0; padding-left: 0; list-style-position: inside;">
@@ -1909,7 +1913,7 @@
 
                                         </div>
 
-                                        <!-- 右侧主内容区：占 3/4 宽度 -->
+                                        
                                         <div
                                             class="et_pb_column et_pb_column_3_4 et_pb_column_main et_pb_css_mix_blend_mode_passthrough et-last-child">
                                             <div
@@ -1926,6 +1930,28 @@
                                                             target="_blank">Tao Li Award</a> Submission due: October 5,
                                                         2025
                                                     </p> -->
+
+                                                    <h4><strong>Announcements</strong></h4>
+                                                    <ul>
+                                                        <li>
+                                                            Author and early bird registration deadline is September 24,
+                                                            2025.
+                                                            Please register <a href="registration.html"
+                                                                target="_blank">here</a>.
+                                                        </li>
+                                                        <li>
+                                                            Keynote speakers have been announced. Please check
+                                                            <a href="keynotes.html" target="_blank">here</a>.
+                                                        </li>
+                                                        <li>
+                                                            ICDM Tao Li Award: annual $2,000 prize honoring Prof. Tao
+                                                            Li, recognizing early-career (≤10 years post-PhD) data
+                                                            mining/ML researchers; 2025 applications due Oct 5, 2025.
+                                                            <a href="https://www.cse.fau.edu/~xqzhu/taoliaward/icdm-tao-li-award.html"
+                                                                target="_blank">Details</a>.
+                                                        </li>
+                                                    </ul>
+                                                    <hr />
 
                                                     <p>
                                                         The IEEE International Conference on Data Mining (ICDM) has
@@ -2163,7 +2189,8 @@
 
         .et_pb_slider_0.et_pb_slider {
             overflow-x: hidden;
-            overflow-y: hidden
+            overflow-y: hidden;
+            height: 300px !important;
         }
 
         .et_pb_slider_0>.box-shadow-overlay,
@@ -2204,6 +2231,64 @@
             background-image: url(images/dc3.jpg);
             background-color: rgba(0, 0, 0, 0)
         }
+
+    
+        @media only screen and (min-width: 981px) {
+    .et_pb_slider_0.et_pb_slider {
+        height: 300px !important;
+    }
+    .et_pb_slider_0 .et_pb_slide_description {
+        transform: translateY(-110px) !important;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+    .et_pb_slider_0.et_pb_slider {
+        height: 300px !important;
+    }
+    .et_pb_slider_0 .et_pb_slide_description {
+        transform: translateY(-60px) !important;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .et_pb_slider_0.et_pb_slider {
+        height: 100px !important;
+        min-height: 250px !important;
+        max-height: 250px !important;
+    }
+
+
+    .et_pb_slider_0.et_pb_slider .et_pb_slides,
+    .et_pb_slider_0.et_pb_slider .et_pb_slide {
+        height: 250px !important;
+        min-height: 250px !important;
+        max-height: 250px !important;
+    }
+
+
+    .et_pb_slider .et_pb_slide_0 {
+        background-size: cover !important;
+        background-position: top center !important;
+        background-repeat: no-repeat !important;
+    }
+
+
+    .et_pb_slider_0 .et_pb_slide_description {
+        transform: translateY(0px) !important;
+        padding: 0 15px;
+    }
+
+    .et_pb_slide_description .et_pb_slide_title,
+    .et_pb_slide_content h1 {
+        font-size: 22px !important;
+    }
+}
+
+
     </style>
 
 </body>

@@ -322,6 +322,49 @@
 
 
 
+<style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .image-container img {
+      width: 1200px;
+      height: auto;
+      border: 1px solid #ccc;
+      transition: transform 0.3s ease;
+    }
+
+    /* 鼠标悬停时放大图片（可选） */
+    .image-container:hover img {
+      transform: scale(1.2);
+    }
+
+    /* 悬浮提示层 */
+    .tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    /* 鼠标悬停时显示提示 */
+    .image-container:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+
 
 
 
@@ -1808,7 +1851,14 @@
 
                                                     <!DOCTYPE html>
 
+                                                    <h4>Conference Hotel Floor Map (Second Floor)</h4>
 
+                                                    <br>
+                                                    <div class="image-container">
+  <a href="./images/program/second_floor.png" target="_blank"><img src="./images/program/second_floor.png" alt="second floor"></a>
+  
+</div>
+<br><br>
                                                     <h4><strong>Day 1: Wednesday, Nov. 12, 2025</strong></h4>
 
                                                     <table>
